@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Minesweeper</title>
+        <meta charset="UTF-8">
+        <link href="minesweeper.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div>
+            <span>Size:</span>
+            <input type="text" value="15" maxlength="2" id="custom_size">
+            <span>Bomb count:</span>
+            <input type="text" value="40" maxlength="2" id="custom_mine_count">
+            <span>Bombs left:</span>
+            <div id="counter"></div>
+        </div>
+        <button id="rerender">Rerender</button>
+        <div id="grid"></div>
+        <script type="text/javascript" src="minesweeper.js"></script>
+    </body>
+</html>

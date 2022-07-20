@@ -1,0 +1,68 @@
+body {
+    --text-color: #2e6f9e;
+    --background-color: #fefccd;
+    --cell-border-color: #829180;
+    --active-color: #c0c0c0;
+    --error-color: #ff0000;
+    --bomb-color: #000;
+    --cell-size: 22px;
+    --control-height: 20px;
+    --border: 2px solid #c27c4e;
+
+    color: var(--text-color);
+    background: var(--background-color);
+    text-align: center;
+}
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid var(--cell-border-color);
+    line-height: var(--cell-size);
+    font-size: 18px;
+}
+.row {
+    height: var(--cell-size);
+    display: flex;
+    overflow: hidden;
+}
+#grid {
+    border: var(--border);
+    display: inline-block;
+}
+.active {
+    background: var(--active-color);
+}
+.error {
+    background: var(--error-color);
+    line-height: 28px;
+}
+.bomb {
+    color: var(--error-color);
+    line-height: 18px;
+    background: var(--bomb-color);
+}
+#counter {
+    width: 30px;
+    height: var(--control-height);
+    border: var(--border);
+    line-height: var(--control-height);
+    display: inline-block;
+    cursor: default;
+}
+input, button {
+    height: var(--control-height);
+    border: var(--border);
+    text-align: center;
+    background: var(--background-color);
+    cursor: pointer;
+}
+input {
+    width: 30px;
+}
+button {
+    display: block;
+    margin: 20px auto;
+}
+input + span {
+    margin-left: 12px;
+}
