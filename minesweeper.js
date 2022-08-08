@@ -55,7 +55,7 @@
                     this.cells[y][x] = {
                         isBomb: false,
                         isOpen: false,
-                        isMarked: false,
+                        isMarked: false, // marked as a bomb
                         dom: cellDom
                     };
                 }
@@ -73,11 +73,11 @@
                     const x = getIndex(cellDom);
                     const y = getIndex(cellDom.parentElement);
 
-                    if (!e.button) {
+                    if (!e.button) { // left click
                         if (!this.cells[y][x].isMarked) {
                             this.checkCell(x, y);
                         }
-                    } else {
+                    } else { // right click
                         if (!this.cells[y][x].isOpen) {
                             this.markCell(x, y, cellDom);
                         }
@@ -88,7 +88,7 @@
             this.gridDom.oncontextmenu = () => false;
         }
 
-        markCell(x, y, cellDom) {
+        markCell(x, y, cellDom) { // toggle the mark
             if (this.cells[y][x].isMarked) {
                 cellDom.classList.remove(CLASSES.BOMB);
                 cellDom.textContent = '';
